@@ -1,0 +1,34 @@
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "query": "SELECT id,name as custom from city LIMIT 3",
+  "db": "digihub_db",
+  "user": "root",
+  "pwd": "password",
+  "host": "127.0.0.1"
+}
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "query": "DESCRIBE INFORMATION_SCHEMA.COLUMNS",
+  "db": "digihub_db",
+  "user": "root",
+  "pwd": "password",
+  "host": "127.0.0.1"
+}
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "query": "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'digihub_db' order by table_name,ordinal_position limit 3",
+  "db": "digihub_db",
+  "user": "root",
+  "pwd": "password",
+  "host": "127.0.0.1"
+}
